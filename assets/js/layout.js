@@ -17,21 +17,21 @@
 
   const header = `
   <header id="site-header-bar" class="site-header fixed inset-x-0 top-0 z-50" data-over="true" data-tone="light">
-    <div class="flex h-[76px] w-full items-center justify-between gap-4 px-[var(--gutter)]">
+    <div class="site-pill flex h-[60px] items-center justify-between gap-4 rounded-full py-1.5 pl-5 pr-1.5 md:pl-6">
       <a href="${base}#top" class="flex items-center" aria-label="Mr. Yoda home">
         <img src="assets/images/mr-yoda-logo.svg" alt="Mr. Yoda" width="135" height="30" class="logo-dark block h-8 w-auto" />
         <img src="assets/images/mr-yoda-logo-light.svg" alt="" width="135" height="30" class="logo-light hidden h-8 w-auto" aria-hidden="true" />
       </a>
       <nav class="nav-pill hidden items-center gap-1 md:flex" aria-label="Main">${links('nav-link')}</nav>
       <a href="${base}#book"
-         class="hidden rounded-full bg-brand-900 px-5 py-2.5 text-sm font-semibold text-white shadow-lg shadow-brand-900/20 transition-colors duration-300 hover:bg-brand-600 md:inline-block">
+         class="hidden rounded-full bg-brand-900 px-5 py-2.5 text-sm font-semibold text-white transition-colors duration-300 hover:bg-brand-600 md:inline-block">
         Book home collection
       </a>
       <button id="menu-toggle" class="nav-pill grid h-11 w-11 place-items-center rounded-full text-brand-900 md:hidden" aria-label="Open menu" aria-expanded="false">
         <span class="text-xl leading-none">&#9776;</span>
       </button>
     </div>
-    <div id="mobile-menu" class="hidden px-[var(--gutter)] pb-4 md:hidden">
+    <div id="mobile-menu" class="mx-auto hidden max-w-[1240px] pb-4 pt-2 md:hidden">
       <nav class="glass glass-strong flex flex-col gap-1 rounded-3xl p-3" aria-label="Mobile">${links('nav-link nav-link--block')}
         <a href="${base}#book" class="mt-1 rounded-full bg-brand-900 px-5 py-3 text-center font-semibold text-white">Book home collection</a>
       </nav>
@@ -48,7 +48,7 @@
   const footer = `
   <footer class="relative isolate overflow-hidden bg-brand-900 text-white">
     <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
-      <div class="absolute inset-0" style="background:radial-gradient(55% 70% at 8% 0%,rgba(92,168,124,.28),transparent 70%),radial-gradient(50% 60% at 100% 100%,rgba(42,135,99,.35),transparent 70%)"></div>
+      <div class="absolute inset-0" style="background:radial-gradient(55% 70% at 8% 0%,rgba(235,112,74,.28),transparent 70%),radial-gradient(50% 60% at 100% 100%,rgba(181,66,19,.35),transparent 70%)"></div>
       <div class="absolute inset-0 opacity-60" style="background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)"></div>
     </div>
 
@@ -106,6 +106,7 @@
   const hero = document.querySelector('[data-hero]');
   if (bar) {
     bar.dataset.tone = (hero && hero.dataset.hero) || 'light';
+    bar.classList.toggle('site-header--landscape', !!document.querySelector('.hero-landscape'));
     const sync = () => {
       const over = hero ? hero.getBoundingClientRect().bottom > 90 : false;
       bar.dataset.over = String(over);

@@ -72,13 +72,15 @@
     const text = h1.textContent.trim().replace(/\s+/g, ' ');
     h1.setAttribute('aria-label', text);
     h1.textContent = '';
+    let accent = false;
     words = text.split(' ').map((w) => {
       const mask = document.createElement('span');
       mask.className = 'inline-block overflow-hidden align-bottom';
       mask.style.cssText = 'padding-bottom:.14em;margin-bottom:-.14em';
       mask.setAttribute('aria-hidden', 'true');
       const inner = document.createElement('span');
-      inner.className = 'inline-block will-change-transform' + (w.startsWith('(') ? ' text-glow' : '');
+      if (w.startsWith('(')) accent = true;
+      inner.className = 'inline-block will-change-transform' + (accent ? ' text-glow' : '');
       inner.textContent = w;
       mask.appendChild(inner);
       h1.appendChild(mask);

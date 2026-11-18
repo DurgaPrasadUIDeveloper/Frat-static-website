@@ -7,34 +7,42 @@
   <meta name="description" content="Answers to common questions about the FRAT test: who should get it, cost in India, turnaround time, positive results, and how to book." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
   <script src="assets/vendor/tailwind.js"></script>
   <style type="text/tailwindcss">
     @theme {
-      /* Poster palette: deep emerald, mid emerald, bright emerald, soft neutrals */
-      --color-brand-50: #F1F7F4;
-      --color-brand-100: #D7EBE3;
-      --color-brand-500: #2F7D68;
-      --color-brand-600: #206755;
-      --color-brand-800: #11493E;
-      --color-brand-900: #0B3A31;
-      --color-accent: #499987;
-      --color-glow: #7FD1BB;
-      --color-mint: #E3F1EB;
-      --color-mist: #F4F6F5;
-      --color-fern: #DDEEE6;
+      /* Yodaara palette: cream paper, warm ink, rust + coral accents, gold highlight */
+      --color-brand-50: #FFFDF8;
+      --color-brand-100: #E8DCC7;
+      --color-brand-500: #C9511F;
+      --color-brand-600: #B03E10;
+      --color-brand-800: #3A2D21;
+      --color-brand-900: #2B2118;
+      --color-accent: #EA6447;
+      --color-glow: #F2C04D;
+      --color-mint: #FAF5EC;
+      --color-mist: #F4F7F4;
+      --color-fern: #F2E7D5;
+      --color-slate-50: #FBF7EF;
+      --color-slate-200: #E8DCC7;
+      --color-slate-300: #D9C9AE;
+      --color-slate-500: #75634E;
+      --color-slate-600: #6A5845;
+      --color-slate-700: #5A4A3A;
+      --color-slate-800: #3E3125;
+      --color-slate-900: #2B2118;
       --font-sans: "Poppins", sans-serif;
     }
   </style>
   <link rel="stylesheet" href="assets/css/styles.css" />
 </head>
-<body class="bg-white font-sans text-slate-700 antialiased">
+<body class="bg-mist font-sans text-slate-700 antialiased">
 
   <div id="site-header"></div>
 
   <main>
     <section data-hero="dark" class="relative isolate overflow-hidden bg-brand-900 pb-16 pt-32 text-white">
-      <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_80%_0%,rgba(127,209,187,.25),transparent)]"></div>
+      <div class="pointer-events-none absolute inset-0 -z-10 bg-[radial-gradient(60%_80%_at_80%_0%,rgba(242,191,77,.25),transparent)]"></div>
       <div class="mx-auto max-w-4xl px-5 text-center">
         <a data-hero-in href="index.html#faq" class="text-sm font-semibold text-glow transition-colors duration-300 hover:text-white">&larr; Back to home</a>
         <p data-hero-in class="mt-6 eyebrow eyebrow--light">FAQ</p>
@@ -173,7 +181,7 @@
       </div>
     </section>
 
-    <section class="bg-white py-16">
+    <section class="bg-brand-50 py-16">
       <div class="mx-auto max-w-[860px] px-5 text-center" data-reveal>
         <p class="text-lg">Still have questions? Speak with a doctor before making decisions about testing or treatment.</p>
         <a href="index.html#book" class="mt-6 inline-block rounded-full bg-brand-600 px-7 py-3 font-semibold text-white transition-colors duration-300 hover:bg-brand-800">Book home collection</a>
@@ -189,6 +197,7 @@
   <script src="assets/js/layout.js"></script>
   <script src="assets/js/booking-modal.js"></script>
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/motion.js"></script>
   <script>
     // Live search over the questions and answers
     (function () {

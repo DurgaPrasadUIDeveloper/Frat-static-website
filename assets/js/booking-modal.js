@@ -19,7 +19,7 @@
     'html.bk-open header.fixed{padding-right:var(--bk-sbw,0)}' +
     '#booking-modal[hidden]{display:none}' +
     '#booking-modal .bk-input{width:100%;border:1px solid #cbd5e1;border-radius:14px;padding:12px 16px;background:#fff;transition:border-color .25s,box-shadow .25s}' +
-    '#booking-modal .bk-input:focus{outline:none;border-color:#206755;box-shadow:0 0 0 4px #d7ebe3}' +
+    '#booking-modal .bk-input:focus{outline:none;border-color:#9b3913;box-shadow:0 0 0 4px #efe4d1}' +
     '#booking-modal .bk-input[aria-invalid="true"]{border-color:#b3261e;box-shadow:0 0 0 4px #f9dedc}' +
     '#booking-modal .bk-err{margin-top:6px;font-size:13px;font-weight:500;color:#b3261e;min-height:0}';
   document.head.appendChild(style);
@@ -71,8 +71,8 @@
 
           <div data-bk-view="done" hidden class="py-8 text-center">
             <svg class="mx-auto" width="72" height="72" viewBox="0 0 72 72" fill="none" aria-hidden="true">
-              <circle data-bk-ring cx="36" cy="36" r="33" stroke="#206755" stroke-width="4" />
-              <path data-bk-tick d="M21 37l10 10 20-22" stroke="#206755" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+              <circle data-bk-ring cx="36" cy="36" r="33" stroke="#9b3913" stroke-width="4" />
+              <path data-bk-tick d="M21 37l10 10 20-22" stroke="#9b3913" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
             </svg>
             <h2 class="mt-5 text-2xl font-bold text-brand-900">Thank you!</h2>
             <p class="mx-auto mt-2 max-w-sm leading-relaxed">We will contact you shortly to confirm your home sample pickup.</p>

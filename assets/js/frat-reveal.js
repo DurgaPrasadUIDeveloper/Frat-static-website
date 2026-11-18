@@ -2,7 +2,7 @@
  * Scroll reveal for the FRAT intro (GSAP ScrollTrigger, driven by Lenis).
  *   [data-frat-heading]  words rise out of a mask
  *   [data-frat-text]     words fade in one by one as you scroll (scrubbed)
- *   [data-frat-image]    wipes open, with a slow zoom and drift on the picture inside
+ *   [data-frat-image]    wipes open on scroll
  * Visitors who prefer reduced motion see everything as normal text.
  */
 (function () {
@@ -83,20 +83,13 @@
     });
   }
 
-  /* Image: wipe open, zoom settles, gentle drift while scrolling */
+  /* Image: wipe open while preserving the full portrait composition. */
   if (imageBox && img) {
     gsap.set(imageBox, { clipPath: 'inset(0% 0% 100% 0% round 24px)' });
-    gsap.set(img, { scale: 1.45, yPercent: -6 });
     gsap.timeline({
       scrollTrigger: { trigger: imageBox, start: 'top 82%' },
     })
-      .to(imageBox, { clipPath: 'inset(0% 0% 0% 0% round 24px)', duration: 1.3, ease: 'power3.inOut' })
-      .to(img, { scale: 1.15, duration: 1.6, ease: 'power3.out' }, 0);
+      .to(imageBox, { clipPath: 'inset(0% 0% 0% 0% round 24px)', duration: 1.3, ease: 'power3.inOut' });
 
-    gsap.to(img, {
-      yPercent: 6,
-      ease: 'none',
-      scrollTrigger: { trigger: imageBox, start: 'top bottom', end: 'bottom top', scrub: true },
-    });
   }
 })();

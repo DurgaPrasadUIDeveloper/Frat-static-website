@@ -123,7 +123,7 @@
       n = document.createElement('div');
       n.className = 'yt-note';
       n.textContent = text;
-      n.style.cssText = 'position:absolute;left:50%;bottom:7%;z-index:4;transform:translateX(-50%);max-width:88%;padding:10px 16px;border-radius:14px;background:rgba(7,40,33,.82);color:#fff;font-size:13px;line-height:1.5;text-align:center;backdrop-filter:blur(8px)';
+      n.style.cssText = 'position:absolute;left:50%;bottom:7%;z-index:4;transform:translateX(-50%);max-width:88%;padding:10px 16px;border-radius:14px;background:rgba(34,25,17,.82);color:#fff;font-size:13px;line-height:1.5;text-align:center;backdrop-filter:blur(8px)';
       frame.appendChild(n);
     }
 
