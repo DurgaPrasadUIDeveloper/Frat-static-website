@@ -83,7 +83,7 @@
     });
   }
 
-  /* Image: wipe open while preserving the full portrait composition. */
+  /* Image: wipe open while preserving the full composition. */
   if (imageBox && img) {
     gsap.set(imageBox, { clipPath: 'inset(0% 0% 100% 0% round 24px)' });
     gsap.timeline({

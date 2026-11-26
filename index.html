@@ -8,7 +8,7 @@
   <meta name="description" content="Learn FRAT test in autism, understand positive vs negative results, cost in India, and next steps. Complete guide to folate receptor antibody test." />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Caveat:wght@500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <script src="assets/vendor/tailwind.js"></script>
   <style type="text/tailwindcss">
     @theme {
@@ -32,7 +32,7 @@
       --color-slate-700: #5A4A3A;
       --color-slate-800: #3E3125;
       --color-slate-900: #2B2118;
-      --font-sans: "Poppins", sans-serif;
+      --font-sans: "Poppins", "Poppins Fallback", sans-serif;
     }
   </style>
   <script>
@@ -45,6 +45,8 @@
   <link rel="stylesheet" href="assets/css/hero-landscape.css" />
   <link rel="stylesheet" href="assets/css/frat-evaluation.css" />
   <link rel="stylesheet" href="assets/css/home-pickup.css" />
+  <link rel="stylesheet" href="assets/css/packages.css" />
+  <link rel="stylesheet" href="assets/css/footer.css" />
   <style>
     .fx-ready [data-fx] { opacity: 0; visibility: hidden; }
     .mascot-bob { animation: mascot-bob 4s ease-in-out infinite; }
@@ -52,37 +54,100 @@
     @media (prefers-reduced-motion: reduce) { .mascot-bob { animation: none; } }
   </style>
 </head>
-<body class="bg-mist font-sans text-slate-700 antialiased">
+<body class="bg-white font-sans text-slate-700 antialiased">
 
   <div id="site-header"></div>
 
   <main>
-    <!-- Reference-inspired hero in the Mr. Yoda brand palette. -->
-    <section id="top" data-hero="dark" class="hero-poster hero-landscape relative isolate overflow-hidden">
-      <img class="hero-landscape-photo" src="assets/images/hero-garden-baby-girl.webp"
-           srcset="assets/images/hero-garden-baby-girl-768.webp 768w, assets/images/hero-garden-baby-girl.webp 1536w"
-           sizes="100vw" width="1536" height="1024" fetchpriority="high"
-           alt="AI-generated scene of a smiling baby girl seated on a stone terrace in a peaceful garden at sunset." />
-      <div class="hero-landscape-shade" aria-hidden="true"></div>
+    <section id="top" data-hero="light" class="hero-poster hero-landscape">
+      <picture class="hero-landscape-media" aria-hidden="true">
+        <source media="(max-width: 899px)" srcset="assets/images/hero-sunlit-patio-mobile.webp" width="694" height="547" />
+        <img class="hero-landscape-photo" src="assets/images/hero-sunlit-patio.webp"
+             srcset="assets/images/hero-sunlit-patio-1200.webp 1200w, assets/images/hero-sunlit-patio.webp 1784w"
+             sizes="100vw" width="1784" height="882" fetchpriority="high" alt="" />
+      </picture>
 
-      <div class="hero-landscape-copy">
-        <p data-fx class="hero-landscape-eyebrow">Limited-time offer</p>
-        <h1 data-fx class="hero-landscape-title">Folate Receptor<br />Autoantibodies (FRAT) Test</h1>
-        <p data-fx class="hero-landscape-description">Book a home sample collection with doorstep pickup.</p>
-        <div data-fx class="hero-landscape-actions">
-          <a href="#book" class="hero-landscape-primary">Book my visit <span aria-hidden="true">&#8599;</span></a>
-          <a href="#frat" class="hero-landscape-secondary">What is the FRAT test?</a>
+      <div class="hero-landscape-inner">
+        <div class="hero-landscape-copy">
+          <p data-fx class="hero-landscape-eyebrow">Limited-time offer</p>
+          <h1 data-fx class="hero-landscape-title">Folate Receptor<br />Autoantibodies<br />(FRAT) Test</h1>
+          <p data-fx class="hero-landscape-description">Book a home sample collection with doorstep pickup.</p>
+
+          <div data-fx class="hero-price" aria-label="Offer price">
+            <p class="hero-price-row">
+              <strong class="hero-price-now"><span class="sr-only">&#8377;12,999</span><span aria-hidden="true">&#8377;<span data-count="12999" class="hero-price-count">12,999</span></span></strong>
+              <span class="hero-price-was"><span class="sr-only">Original price </span><s data-strike>&#8377;25,000</s></span>
+              <span data-badge class="hero-price-save">Save 48%</span>
+            </p>
+            <ul class="hero-assure" aria-label="Why book with us">
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 11 12 4l8.5 7"/><path d="M5.5 9.8V20h13V9.8"/><path d="M10 20v-5.5h4V20"/></svg>
+                Home collection
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3 5 6v5.5c0 4.2 3 7.5 7 9 4-1.5 7-4.8 7-9V6l-7-3z"/><path d="m8.8 12 2.3 2.3 4.2-4.6"/></svg>
+                Lab-grade accuracy
+              </li>
+              <li>
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="9" r="5.5"/><path d="m8.5 14-1.5 7 5-2.5 5 2.5-1.5-7"/><path d="m9.8 9 1.7 1.7 3-3.2"/></svg>
+                Trusted diagnostics
+              </li>
+            </ul>
+          </div>
+
+          <div class="hero-landscape-stats">
+            <p class="hero-landscape-perk">
+              <svg viewBox="0 0 20 20" fill="none" aria-hidden="true"><path d="M5 10.5l3.2 3.2L15 6.8" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+              No fasting needed
+            </p>
+            <a data-fx href="#frat" class="hero-landscape-perk hero-landscape-perk--ghost">
+              What is the FRAT test?
+              <svg class="perk-arrow" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M3.5 10h13M11.5 5l5 5-5 5"/></svg>
+            </a>
+          </div>
         </div>
-        <p data-fx class="hero-landscape-offer"><strong>&#8377;12,999</strong> <s>&#8377;25,000</s> <span class="hero-landscape-saving">Save 48%</span><span class="hero-landscape-price-note">No surprises in pricing</span></p>
-      </div>
 
-      <div class="hero-landscape-stat hero-landscape-stat--left">
-        <strong>15&ndash;20 <span>min</span></strong>
-        <span>home collection</span>
-      </div>
-      <div class="hero-landscape-stat hero-landscape-stat--right">
-        <strong>No fasting</strong>
-        <span>needed</span>
+        <!-- Booking form, shown directly in the hero (same fields as the popup) -->
+        <div id="hero-book" data-fx class="hero-booking" role="region" aria-labelledby="hb-title">
+          <div data-hb-view="form">
+            <h2 id="hb-title" class="hb-title">Schedule your free home sample collection</h2>
+            <p class="hb-note">*Prices are subject to change as per city.</p>
+            <form data-hb-form novalidate class="hb-form">
+              <div class="hb-field">
+                <label for="hb-name">Name</label>
+                <input id="hb-name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required />
+                <p class="hb-err" data-err="name" hidden></p>
+              </div>
+              <div class="hb-field">
+                <label for="hb-phone">Phone number</label>
+                <input id="hb-phone" name="phone" type="tel" inputmode="tel" placeholder="+91 Enter phone number" autocomplete="tel" required />
+                <p class="hb-err" data-err="phone" hidden></p>
+              </div>
+              <div class="hb-field">
+                <label for="hb-city">City</label>
+                <input id="hb-city" name="city" type="text" placeholder="Enter city name" autocomplete="address-level2" required />
+                <p class="hb-err" data-err="city" hidden></p>
+              </div>
+              <div>
+                <label class="hb-check">
+                  <input type="checkbox" name="consent" required />
+                  <span>You hereby affirm &amp; authorise Mr. Yoda to process personal data as per Privacy Policy.</span>
+                </label>
+                <p class="hb-err" data-err="consent" hidden></p>
+              </div>
+              <button type="submit" class="hb-submit" data-hb-submit>Submit</button>
+            </form>
+          </div>
+          <div data-hb-view="done" hidden class="hb-done" tabindex="-1">
+            <svg width="68" height="68" viewBox="0 0 72 72" fill="none" aria-hidden="true">
+              <circle data-hb-ring cx="36" cy="36" r="33" stroke="#9b3913" stroke-width="4" />
+              <path data-hb-tick d="M21 37l10 10 20-22" stroke="#9b3913" stroke-width="5" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+            <h2>Thank you!</h2>
+            <p>We will contact you shortly to confirm your home sample pickup.</p>
+            <button type="button" class="hb-again" data-hb-again>Submit another request</button>
+          </div>
+        </div>
       </div>
 
     </section>
@@ -93,7 +158,7 @@
         <div data-frat-intro class="grid items-start gap-10 md:grid-cols-2 md:gap-14 lg:gap-20">
           <!-- Text: sits a little higher -->
           <div class="md:-mt-4">
-            <h2 data-frat-heading class="text-[18px] font-bold leading-snug text-brand-900">What is the FRAT IgG test?</h2>
+            <h2 data-frat-heading class="eyebrow">What is the FRAT IgG test?</h2>
             <p data-frat-text class="mt-4 text-[22px] font-normal leading-[1.4] text-black md:text-[26px] lg:text-[32px]">
               The <strong class="font-normal text-black">FRAT test</strong> (also known as the <strong class="font-normal text-black">folate receptor autoantibody test</strong>)
               helps assess conditions linked to impaired folate metabolism. It may be used in pregnancy care and developmental evaluations.
@@ -102,8 +167,8 @@
           </div>
 
           <!-- Image: sits lower, revealed on scroll -->
-          <div data-frat-image class="frat-consultation-portrait overflow-hidden rounded-3xl shadow-xl md:mt-8">
-            <img data-frat-img src="assets/images/frat-consultation-portrait.webp" srcset="assets/images/frat-consultation-portrait-512.webp 512w, assets/images/frat-consultation-portrait.webp 1024w" sizes="(min-width: 480px) 400px, calc(100vw - 56px)" width="1024" height="1536" alt="AI-generated portrait of a pediatrician with a baby girl and her mother in a warm, sunlit consultation room." class="block h-auto w-full object-cover will-change-transform" loading="lazy" decoding="async" />
+          <div data-frat-image class="frat-consultation-image overflow-hidden rounded-3xl shadow-xl md:mt-8">
+            <img data-frat-img src="assets/images/frat-consultation-square.webp" srcset="assets/images/frat-consultation-square-640.webp 640w, assets/images/frat-consultation-square.webp 1200w" sizes="(min-width: 1440px) 600px, (min-width: 1024px) calc(45.55vw - 40px), (min-width: 768px) calc(45.55vw - 28px), min(600px, calc(100vw - 40px))" width="1200" height="1200" alt="A pediatrician and a mother watch a young girl build with wooden blocks in a sunlit clinic." class="block h-auto w-full object-cover will-change-transform" loading="lazy" decoding="async" />
           </div>
         </div>
 
@@ -112,35 +177,45 @@
 
     <!-- FRAT benefits and evaluation topics, with clay illustrations. -->
     <section id="where-it-helps" class="frat-evaluation" aria-labelledby="frat-purpose-title">
+      <img class="fe-leaf fe-leaf--top" src="assets/img/leaf-shadow.svg" alt="" aria-hidden="true" />
+      <img class="fe-leaf fe-leaf--bottom" src="assets/img/leaf-shadow.svg" alt="" aria-hidden="true" />
       <div class="wrap">
         <div class="frat-purpose-layout">
           <div class="frat-evaluation-purpose">
-            <div>
-              <p class="frat-evaluation-eyebrow">What it does</p>
-              <h2 id="frat-purpose-title">The FRAT blood test helps to</h2>
-            </div>
+            <p class="frat-evaluation-eyebrow">What it does</p>
+            <h2 id="frat-purpose-title">The FRAT blood test helps to</h2>
           </div>
 
           <ol class="frat-mechanism" aria-label="What the FRAT blood test helps to assess">
-            <li class="frat-mechanism-step">
-              <img src="assets/images/frat-mechanism-antibody-test.webp"
-                   srcset="assets/images/frat-mechanism-antibody-test-480.webp 480w, assets/images/frat-mechanism-antibody-test.webp 900w"
-                   sizes="(min-width: 640px) 274px, min(280px, 85vw)"
-                   width="900" height="900" alt="Clay illustration of a blood sample tube and a magnifying glass showing antibodies." loading="lazy" decoding="async" />
-              <div class="frat-mechanism-caption">
-                <span class="frat-mechanism-number" aria-hidden="true">1</span>
-                <h3>Detect folate receptor autoantibodies in blood</h3>
+            <li class="frat-mechanism-step fe-step fe-step--green">
+              <div class="fe-step-media">
+                <img src="assets/images/frat-mechanism-antibody-test.webp"
+                     srcset="assets/images/frat-mechanism-antibody-test-480.webp 480w, assets/images/frat-mechanism-antibody-test.webp 900w"
+                     sizes="(min-width: 1200px) 190px, 180px"
+                     width="900" height="900" alt="Clay illustration of a blood sample tube and a magnifying glass showing antibodies." loading="lazy" decoding="async" />
               </div>
+              <h3 class="fe-step-text">Detect folate receptor autoantibodies in blood</h3>
+              <span class="fe-ico fe-ico--soft fe-ico--green">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="m9 13 4.5 5v10a2.5 2.5 0 0 0 5 0V18l4.5-5M11.5 10.5l4.5 5 4.5-5" />
+                  <path d="m8 15-5.5-7a2.6 2.6 0 0 1 4-3.3l5.7 7zM24 15l5.5-7a2.6 2.6 0 0 0-4-3.3l-5.7 7z" />
+                </svg>
+              </span>
             </li>
-            <li class="frat-mechanism-step">
-              <img src="assets/images/frat-mechanism-antibody-block.webp"
-                   srcset="assets/images/frat-mechanism-antibody-block-480.webp 480w, assets/images/frat-mechanism-antibody-block.webp 900w"
-                   sizes="(min-width: 640px) 274px, min(280px, 85vw)"
-                   width="900" height="900" alt="Clay illustration of antibodies blocking a folate transport gateway beneath a brain." loading="lazy" decoding="async" />
-              <div class="frat-mechanism-caption">
-                <span class="frat-mechanism-number" aria-hidden="true">2</span>
-                <h3>Assess the risk of impaired folate transport into cells</h3>
+            <li class="frat-mechanism-step fe-step fe-step--orange">
+              <div class="fe-step-media">
+                <img src="assets/images/frat-mechanism-antibody-block.webp"
+                     srcset="assets/images/frat-mechanism-antibody-block-480.webp 480w, assets/images/frat-mechanism-antibody-block.webp 900w"
+                     sizes="(min-width: 1200px) 190px, 180px"
+                     width="900" height="900" alt="Clay illustration of antibodies blocking a folate transport gateway beneath a brain." loading="lazy" decoding="async" />
               </div>
+              <h3 class="fe-step-text">Assess the risk of impaired folate transport into cells</h3>
+              <span class="fe-ico fe-ico--soft fe-ico--orange">
+                <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M9 2c0 7 14 7 14 14S9 23 9 30M23 2c0 7-14 7-14 14s14 7 14 14" />
+                  <path d="M11.2 6.2h9.6m-9.6 5.6h9.6m-9.6 8.4h9.6m-9.6 5.6h9.6" />
+                </svg>
+              </span>
             </li>
           </ol>
         </div>
@@ -151,54 +226,109 @@
             <h3 id="frat-evaluation-title">Support evaluation of</h3>
           </div>
           <ul class="frat-evaluation-grid">
-            <li class="frat-evaluation-card">
-              <img src="assets/images/frat-clay-pregnancy-support.webp"
-                   srcset="assets/images/frat-clay-pregnancy-support-640.webp 640w, assets/images/frat-clay-pregnancy-support.webp 1200w"
-                   sizes="(min-width: 1680px) 506px, (min-width: 1024px) 29vw, (min-width: 640px) 44vw, calc(100vw - 56px)"
-                   width="1200" height="800" alt="Clay illustration of a woman receiving support from a clinician." loading="lazy" decoding="async" />
-              <h4>Recurrent pregnancy loss (infertility blood tests for women)</h4>
+            <li class="frat-evaluation-card fe-card fe-card--rose">
+              <div class="fe-card-media">
+                <img src="assets/images/frat-clay-pregnancy-support.webp"
+                     srcset="assets/images/frat-clay-pregnancy-support-640.webp 640w, assets/images/frat-clay-pregnancy-support.webp 1200w"
+                     sizes="(min-width: 1200px) 20vw, (min-width: 768px) 30vw, (min-width: 520px) 44vw, calc(100vw - 56px)"
+                     width="1200" height="800" alt="Clay illustration of a woman receiving support from a clinician." loading="lazy" decoding="async" />
+              </div>
+              <div class="fe-card-body">
+                <span class="fe-ico fe-ico--solid fe-ico--rose">
+                  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M16 7c-2.7 0-4 .9-6.4.9C7.8 7.9 6.4 7 4.7 7 2.4 7 1 8.4 1 10.6c0 2 1.4 3.6 3.4 3.6 1.3 0 2.3-.8 2.3-2s-.9-2-2-2M16 7c2.7 0 4 .9 6.4.9 1.8 0 3.2-.9 4.9-.9 2.3 0 3.7 1.4 3.7 3.6 0 2-1.4 3.6-3.4 3.6-1.3 0-2.3-.8-2.3-2s.9-2 2-2" />
+                    <path d="M10 8.2c0 5.4 1.7 7.3 2.8 9.8.8 1.8 1 3.5 1 6.3a2.2 2.2 0 0 0 4.4 0c0-2.8.2-4.5 1-6.3 1.1-2.5 2.8-4.4 2.8-9.8" />
+                  </svg>
+                </span>
+                <h4>Recurrent pregnancy loss (infertility blood tests for women)</h4>
+              </div>
             </li>
-            <li class="frat-evaluation-card">
-              <img src="assets/images/frat-clay-prenatal-development.webp"
-                   srcset="assets/images/frat-clay-prenatal-development-640.webp 640w, assets/images/frat-clay-prenatal-development.webp 1200w"
-                   sizes="(min-width: 1680px) 506px, (min-width: 1024px) 29vw, (min-width: 640px) 44vw, calc(100vw - 56px)"
-                   width="1200" height="800" alt="Clay illustration of a pregnant woman resting her hands on her abdomen." loading="lazy" decoding="async" />
-              <h4>Neural tube defects</h4>
+            <li class="frat-evaluation-card fe-card fe-card--green">
+              <div class="fe-card-media">
+                <img src="assets/images/frat-clay-prenatal-development.webp"
+                     srcset="assets/images/frat-clay-prenatal-development-640.webp 640w, assets/images/frat-clay-prenatal-development.webp 1200w"
+                     sizes="(min-width: 1200px) 20vw, (min-width: 768px) 30vw, (min-width: 520px) 44vw, calc(100vw - 56px)"
+                     width="1200" height="800" alt="Clay illustration of a pregnant woman resting her hands on her abdomen." loading="lazy" decoding="async" />
+              </div>
+              <div class="fe-card-body">
+                <span class="fe-ico fe-ico--solid fe-ico--green">
+                  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M4.5 8H3v4.5a5 5 0 0 0 10 0V8h-1.5M5.5 5.5v4m5-4v4M8 17.5V21a7.5 7.5 0 0 0 7.5 7.5c7.3 0 12-6.6 12-13.5v-3" />
+                    <circle cx="24" cy="8" r="4.5" />
+                    <path d="M21.8 8a2.2 2.2 0 0 1 2.2-2.2" />
+                  </svg>
+                </span>
+                <h4>Neural tube defects</h4>
+              </div>
             </li>
-            <li class="frat-evaluation-card">
-              <img src="assets/images/frat-clay-autism-evaluation.webp"
-                   srcset="assets/images/frat-clay-autism-evaluation-640.webp 640w, assets/images/frat-clay-autism-evaluation.webp 1200w"
-                   sizes="(min-width: 1680px) 506px, (min-width: 1024px) 29vw, (min-width: 640px) 44vw, calc(100vw - 56px)"
-                   width="1200" height="800" alt="Clay illustration of a clinician observing a child playing with blocks." loading="lazy" decoding="async" />
-              <h4>Autism-related evaluation, as one part of a wider assessment</h4>
+            <li class="frat-evaluation-card fe-card fe-card--blue">
+              <div class="fe-card-media">
+                <img src="assets/images/frat-clay-autism-evaluation.webp"
+                     srcset="assets/images/frat-clay-autism-evaluation-640.webp 640w, assets/images/frat-clay-autism-evaluation.webp 1200w"
+                     sizes="(min-width: 1200px) 20vw, (min-width: 768px) 30vw, (min-width: 520px) 44vw, calc(100vw - 56px)"
+                     width="1200" height="800" alt="Clay illustration of a clinician observing a child playing with blocks." loading="lazy" decoding="async" />
+              </div>
+              <div class="fe-card-body">
+                <span class="fe-ico fe-ico--solid fe-ico--blue">
+                  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="currentColor">
+                    <mask id="fe-puzzle-seams">
+                      <rect width="32" height="32" fill="white" />
+                      <path d="M16 6v3h1.2a2.2 2.2 0 0 1 0 4.4H16V18h-1.2a2.2 2.2 0 0 0 0 4.4H16V29M3 17h4v-1.2a2.2 2.2 0 0 1 4.4 0V17H20v1.2a2.2 2.2 0 0 0 4.4 0V17H29" fill="none" stroke="black" stroke-width="1.1" stroke-linecap="round" stroke-linejoin="round" />
+                    </mask>
+                    <path d="M4 6h4.5V4.6a2.1 2.1 0 0 1 4.2 0V6H21V4.6a2.1 2.1 0 0 1 4.2 0V6H28v4h1a2 2 0 0 1 0 4h-1v6h-1.2a2 2 0 0 0 0 4H28v4H4v-4h1.2a2 2 0 0 0 0-4H4v-6H3a2 2 0 0 1 0-4h1Z" mask="url(#fe-puzzle-seams)" />
+                  </svg>
+                </span>
+                <h4>Autism-related evaluation, as one part of a wider assessment</h4>
+              </div>
             </li>
-            <li class="frat-evaluation-card">
-              <img src="assets/images/frat-clay-developmental-delays.webp"
-                   srcset="assets/images/frat-clay-developmental-delays-640.webp 640w, assets/images/frat-clay-developmental-delays.webp 1200w"
-                   sizes="(min-width: 1680px) 506px, (min-width: 1024px) 29vw, (min-width: 640px) 44vw, calc(100vw - 56px)"
-                   width="1200" height="800" alt="Clay illustration of a parent supporting a toddler stacking blocks." loading="lazy" decoding="async" />
-              <h4>Unexplained developmental delays in children</h4>
+            <li class="frat-evaluation-card fe-card fe-card--orange">
+              <div class="fe-card-media">
+                <img src="assets/images/frat-clay-developmental-delays.webp"
+                     srcset="assets/images/frat-clay-developmental-delays-640.webp 640w, assets/images/frat-clay-developmental-delays.webp 1200w"
+                     sizes="(min-width: 1200px) 20vw, (min-width: 768px) 30vw, (min-width: 520px) 44vw, calc(100vw - 56px)"
+                     width="1200" height="800" alt="Clay illustration of a parent supporting a toddler stacking blocks." loading="lazy" decoding="async" />
+              </div>
+              <div class="fe-card-body">
+                <span class="fe-ico fe-ico--solid fe-ico--orange">
+                  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="currentColor">
+                    <path d="M16 2c1.1 0 1.5.9 1.9 1.8 1.1 2.1 3.2 3.2 6 3.7 2.2.4 3.1 1.1 3.1 2.5 0 1.5-1.4 2.5-3.2 2.5H8.2C6.4 12.5 5 11.5 5 10c0-1.4.9-2.1 3.1-2.5 2.8-.5 4.9-1.6 6-3.7.4-.9.8-1.8 1.9-1.8Z" />
+                    <rect x="4" y="15" width="24" height="6" rx="3" />
+                    <rect x="2" y="23.5" width="28" height="6" rx="3" />
+                  </svg>
+                </span>
+                <h4>Unexplained developmental delays in children</h4>
+              </div>
             </li>
-            <li class="frat-evaluation-card">
-              <img src="assets/images/frat-clay-neurodevelopment.webp"
-                   srcset="assets/images/frat-clay-neurodevelopment-640.webp 640w, assets/images/frat-clay-neurodevelopment.webp 1200w"
-                   sizes="(min-width: 1680px) 506px, (min-width: 1024px) 29vw, (min-width: 640px) 44vw, calc(100vw - 56px)"
-                   width="1200" height="800" alt="Clay illustration of a child using a shape sorter beside a brain model." loading="lazy" decoding="async" />
-              <h4>Neurodevelopmental concerns</h4>
+            <li class="frat-evaluation-card fe-card fe-card--purple">
+              <div class="fe-card-media">
+                <img src="assets/images/frat-clay-neurodevelopment.webp"
+                     srcset="assets/images/frat-clay-neurodevelopment-640.webp 640w, assets/images/frat-clay-neurodevelopment.webp 1200w"
+                     sizes="(min-width: 1200px) 20vw, (min-width: 768px) 30vw, (min-width: 520px) 44vw, calc(100vw - 56px)"
+                     width="1200" height="800" alt="Clay illustration of a child using a shape sorter beside a brain model." loading="lazy" decoding="async" />
+              </div>
+              <div class="fe-card-body">
+                <span class="fe-ico fe-ico--solid fe-ico--purple">
+                  <svg viewBox="0 0 32 32" aria-hidden="true" focusable="false" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M5.5 21.5a4.5 4.5 0 0 1-2-8.5 4 4 0 0 1 3.3-4.1 4.3 4.3 0 0 1 6-2.8 4.5 4.5 0 0 1 6.6-.4 4.6 4.6 0 0 1 6.2 3 4.6 4.6 0 0 1 3.6 4.7 4.2 4.2 0 0 1-3.1 7.2H23a3.7 3.7 0 0 1-3.6 3.1L21 27h-4.2l-2-3.4h-3.2a4.6 4.6 0 0 1-4-2.7 3.5 3.5 0 0 1-2.1.6Z" />
+                    <path d="M6.8 8.9c1.5.1 2.7 1 3.2 2.3M12.8 6.1c.2 1.8 1.4 2.8 1.4 4.5 0 2-1.4 3.4-3.4 3.4H8.5M19.4 5.7c-1.3.9-1.8 2-1.8 3.3m8-.3c-3.3-.1-3.9 3.5-6.3 4.4M7.6 20.9c.4-2 2-3.3 4.2-3.3h4.9a4.6 4.6 0 0 0 3.5-1.5c1.1-1.1 2.5-1.6 3.9-1.2m-4.7 8.8h-1.2a3.5 3.5 0 0 1-3.4-2.3" />
+                  </svg>
+                </span>
+                <h4>Neurodevelopmental concerns</h4>
+              </div>
             </li>
           </ul>
         </div>
       </div>
     </section>
 
-    <!-- Home collection, with warm garden photography and service cards. -->
+    <!-- Home collection, with sample collection photography and service cards. -->
     <section id="home-collection" class="home-pickup" aria-labelledby="home-pickup-title">
       <div class="wrap">
         <div class="home-pickup-intro">
-          <img class="home-pickup-photo" src="assets/images/home-pickup-garden.webp"
-               srcset="assets/images/home-pickup-garden-768.webp 768w, assets/images/home-pickup-garden.webp 1536w"
+          <img class="home-pickup-photo" src="assets/images/home-pickup-child-saliva.webp"
+               srcset="assets/images/home-pickup-child-saliva-768.webp 768w, assets/images/home-pickup-child-saliva.webp 1536w"
                sizes="(min-width: 1680px) 746px, (min-width: 900px) 44vw, calc(100vw - 56px)"
-               width="1536" height="1024" alt="AI-generated scene of a phlebotomist preparing a home sample collection kit beside a baby girl and her mother on a garden terrace at sunset."
+               width="1536" height="1024" alt="A male phlebotomist uses an oral swab to collect a saliva sample from a child at home with her mother beside her."
                loading="lazy" decoding="async" />
           <div class="home-pickup-copy">
             <p class="eyebrow">Home sample pickup</p>
@@ -253,78 +383,89 @@
     </section>
 
     <!-- Packages -->
-    <section id="packages" data-fit-view class="bg-brand-50 py-12 lg:flex lg:items-center">
-      <div class="wrap">
-        <div class="pkg-intro" data-reveal>
-          <p class="eyebrow">Mr. Yoda's Club</p>
-          <h2 class="section-h2 mt-3 text-brand-900">Mr. Yoda Popular Health Packages</h2>
-          <p class="mt-3">Member prices shown for Mr. Yoda's Club.</p>
+    <section id="packages" class="pk-section">
+      <div class="wrap pk-wrap">
+        <div class="pk-intro" data-reveal>
+          <p class="pk-eyebrow">Mr. Yoda's Club</p>
+          <h2 class="pk-title">Mr. Yoda Popular Health Packages</h2>
+          <p class="pk-sub">Member prices shown for Mr. Yoda's Club: 10% off, up to &#8377; 1,000.</p>
         </div>
-        <div class="mt-8 grid gap-5 lg:grid-cols-3 lg:gap-6" data-stagger>
-          <article class="pkg-card">
-            <header class="pkg-head">
-              <span class="pkg-num" aria-hidden="true">01</span>
-              <h3>Autism / Neuropsychiatric Panel - Advanced</h3>
-            </header>
-            <div class="pkg-body">
-              <p class="pkg-label">What's inside</p>
-              <ul class="pkg-list pkg-list--2">
-              <li>Homocysteine</li>
-              <li>NBS-49 Disorders</li>
-              <li>Folate receptor antibodies (FRAT)</li>
-              <li>CBP (Complete Blood Picture)</li>
-              <li>Guanidinoacetate &amp; Creatine (Urine)</li>
-              <li>MTHFR</li>
-              <li>RBC Folate</li>
-              <li>Active B12</li>
+
+        <div class="pk-grid" data-stagger>
+          <!-- Featured package -->
+          <article class="pk-card pk-card--feature">
+            <span class="pk-badge"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round" aria-hidden="true"><path d="M10 2.8l2.1 4.5 4.9.6-3.6 3.4.9 4.9L10 13.7l-4.3 2.5.9-4.9L3 7.9l4.9-.6z"/></svg>Most comprehensive</span>
+            <img class="pk-helix" src="assets/img/dna-helix.svg" alt="" aria-hidden="true" loading="lazy" decoding="async" />
+            <div class="pk-feature-main">
+              <header class="pk-head">
+                <span class="pk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 5a3 3 0 1 0-5.997.125 4 4 0 0 0-2.526 5.77 4 4 0 0 0 .556 6.588A4 4 0 1 0 12 18Z"/><path d="M12 5a3 3 0 1 1 5.997.125 4 4 0 0 1 2.526 5.77 4 4 0 0 1-.556 6.588A4 4 0 1 1 12 18Z"/><path d="M15 13a4.5 4.5 0 0 1-3-4 4.5 4.5 0 0 1-3 4"/><path d="M17.6 6.5a3 3 0 0 0 .4-1.4M6 5.1a3 3 0 0 0 .4 1.4M3.5 10.9a4 4 0 0 1 .6-.4M19.9 10.5a4 4 0 0 1 .6.4M6 18a4 4 0 0 1-2-.5M20 17.5a4 4 0 0 1-2 .5"/></svg></span>
+                <h3>Autism / Neuropsychiatric <span class="pk-nb">Panel &ndash; Advanced</span></h3>
+              </header>
+              <p class="pk-label">What's inside</p>
+              <ul class="pk-checks">
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>Homocysteine</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>NBS-49 Disorders</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>Folate receptor antibodies (FRAT)</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>CBP (Complete Blood Picture)</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>Guanidinoacetate &amp; Creatine (Urine)</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>MTHFR</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>RBC Folate</span></li>
+                <li><span class="pk-tick"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5.5 10.4l3 3 6-6.4"/></svg></span><span>Active B12</span></li>
               </ul>
-              <p class="pkg-tat"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.5V10l3 2"/></svg><span>Reports within <strong>3-5 Weeks</strong></span></p>
-              <div class="pkg-price">
-                <p class="pkg-price-label">Mr Yoda's Club Member price</p>
-                <p class="pkg-price-sub">&#8377; 999</p>
-                <p class="pkg-price-main">&#8377; 26,999</p>
+              <p class="pk-tat"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.8V10l2.8 1.8"/></svg><span>Reports within <strong>3-5 Weeks</strong></span></p>
+            </div>
+            <div class="pk-buy">
+              <div class="pk-price">
+                <p class="pk-price-label">Mr Yoda's Club Member price</p>
+                <p class="pk-price-main">&#8377; 25,999</p>
+                <p class="pk-price-sub"><s class="pk-price-was">&#8377; 26,999</s><span class="pk-save">Save &#8377; 1,000</span></p>
               </div>
-              <a href="#book" class="pkg-cta">Book this package <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.4-1.4L14.6 11H3a1 1 0 110-2h11.6l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></a>
+              <span class="pk-divider" aria-hidden="true"></span>
+              <a href="#book" class="pk-cta">Book this package <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
             </div>
           </article>
-          <article class="pkg-card">
-            <header class="pkg-head">
-              <span class="pkg-num" aria-hidden="true">02</span>
-              <h3>RBC Folate</h3>
-            </header>
-            <div class="pkg-body">
-              <p class="pkg-label">What's inside</p>
-              <ul class="pkg-list">
-              <li>Evaluates folate stored in red blood cells, indicating long-term status.</li>
-              </ul>
-              <p class="pkg-tat"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.5V10l3 2"/></svg><span>Reports within <strong>2-4 Days</strong></span></p>
-              <div class="pkg-price">
-                <p class="pkg-price-label">Mr Yoda's Club Member price</p>
-                <p class="pkg-price-sub">&#8377; 999</p>
-                <p class="pkg-price-main">&#8377; 3,000</p>
+
+          <div class="pk-side">
+            <article class="pk-card pk-card--row">
+              <div class="pk-row-main">
+                <header class="pk-head">
+                  <span class="pk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M7 16.3c2.2 0 4-1.83 4-4.05 0-1.16-.57-2.26-1.71-3.19S7.29 6.75 7 5.3c-.29 1.45-1.14 2.84-2.29 3.76S3 11.1 3 12.25c0 2.22 1.8 4.05 4 4.05z"/><path d="M12.56 6.6A10.97 10.97 0 0 0 14 3.02c.5 2.5 2 4.9 4 6.5s3 3.5 3 5.5a6.98 6.98 0 0 1-11.91 4.97"/></svg></span>
+                  <h3>RBC Folate</h3>
+                </header>
+                <p class="pk-desc">Evaluates folate stored in red blood cells, indicating long-term status.</p>
+                <p class="pk-tat"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.8V10l2.8 1.8"/></svg><span>Reports within <strong>2-4 Days</strong></span></p>
               </div>
-              <a href="#book" class="pkg-cta">Book this package <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.4-1.4L14.6 11H3a1 1 0 110-2h11.6l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></a>
-            </div>
-          </article>
-          <article class="pkg-card">
-            <header class="pkg-head">
-              <span class="pkg-num" aria-hidden="true">03</span>
-              <h3>Vitamin B12 Active; Holotranscobalamin</h3>
-            </header>
-            <div class="pkg-body">
-              <p class="pkg-label">What's inside</p>
-              <ul class="pkg-list">
-              <li>Holotranscobalamin is the active form of vitamin B12, necessary for red blood cell production and nerve function. Low levels can indicate B12 deficiency.</li>
-              </ul>
-              <p class="pkg-tat"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.5V10l3 2"/></svg><span>Reports within <strong>Same Day</strong></span></p>
-              <div class="pkg-price">
-                <p class="pkg-price-label">Mr Yoda's Club Member price</p>
-                <p class="pkg-price-sub">&#8377; 999</p>
-                <p class="pkg-price-main">&#8377; 2,000</p>
+              <span class="pk-divider" aria-hidden="true"></span>
+              <div class="pk-row-buy">
+                <div class="pk-price">
+                <p class="pk-price-label">Mr Yoda's Club Member price</p>
+                <p class="pk-price-main">&#8377; 2,700</p>
+                <p class="pk-price-sub"><s class="pk-price-was">&#8377; 3,000</s><span class="pk-save">Save &#8377; 300</span></p>
               </div>
-              <a href="#book" class="pkg-cta">Book this package <svg viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.4-1.4L14.6 11H3a1 1 0 110-2h11.6l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg></a>
-            </div>
-          </article>
+                <a href="#book" class="pk-cta">Book this package <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+              </div>
+            </article>
+
+            <article class="pk-card pk-card--row">
+              <div class="pk-row-main">
+                <header class="pk-head">
+                  <span class="pk-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="2.6"/><path d="M12 9.4V6M12 14.6V18M9.4 12H6M14.6 12H18M10.2 10.2 7.6 7.6M13.8 13.8l2.6 2.6M13.8 10.2l2.6-2.6M10.2 13.8l-2.6 2.6"/><circle cx="12" cy="4.6" r="1.3"/><circle cx="12" cy="19.4" r="1.3"/><circle cx="4.6" cy="12" r="1.3"/><circle cx="19.4" cy="12" r="1.3"/><circle cx="6.6" cy="6.6" r="1.1"/><circle cx="17.4" cy="17.4" r="1.1"/><circle cx="17.4" cy="6.6" r="1.1"/><circle cx="6.6" cy="17.4" r="1.1"/></svg></span>
+                  <h3>Vitamin B12 Active; Holotranscobalamin</h3>
+                </header>
+                <p class="pk-desc">Holotranscobalamin is the active form of vitamin B12, necessary for red blood cell production and nerve function. Low levels can indicate B12 deficiency.</p>
+                <p class="pk-tat"><svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="10" cy="10" r="7.5"/><path d="M10 5.8V10l2.8 1.8"/></svg><span>Reports within <strong>Same Day</strong></span></p>
+              </div>
+              <span class="pk-divider" aria-hidden="true"></span>
+              <div class="pk-row-buy">
+                <div class="pk-price">
+                <p class="pk-price-label">Mr Yoda's Club Member price</p>
+                <p class="pk-price-main">&#8377; 1,800</p>
+                <p class="pk-price-sub"><s class="pk-price-was">&#8377; 2,000</s><span class="pk-save">Save &#8377; 200</span></p>
+              </div>
+                <a href="#book" class="pk-cta">Book this package <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg></a>
+              </div>
+            </article>
+          </div>
         </div>
       </div>
     </section>
@@ -374,6 +515,7 @@
   <script src="assets/vendor/ScrollTrigger.min.js"></script>
   <script src="assets/vendor/lenis.min.js"></script>
   <script src="assets/js/layout.js"></script>
+  <script src="assets/js/hero-form.js"></script>
   <script src="assets/js/booking-modal.js"></script>
   <script src="assets/js/hero.js"></script>
   <script src="assets/js/hero-fx.js"></script>

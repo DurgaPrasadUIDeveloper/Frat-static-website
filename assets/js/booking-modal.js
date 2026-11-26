@@ -53,10 +53,6 @@
               ${field('name', 'Name', 'text', 'Enter your name', 'required')}
               ${field('phone', 'Phone number', 'tel', '+91 Enter phone number', 'required inputmode="tel"')}
               ${field('city', 'City', 'text', 'Enter city name', 'required')}
-              <label class="flex items-start gap-3 text-sm">
-                <input type="checkbox" name="whatsapp" class="mt-1 h-4 w-4 accent-brand-600" />
-                <span>Opt in for WhatsApp updates</span>
-              </label>
               <div>
                 <label class="flex items-start gap-3 text-sm">
                   <input type="checkbox" name="consent" required class="mt-1 h-4 w-4 accent-brand-600" />

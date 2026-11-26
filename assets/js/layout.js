@@ -18,9 +18,10 @@
   const header = `
   <header id="site-header-bar" class="site-header fixed inset-x-0 top-0 z-50" data-over="true" data-tone="light">
     <div class="site-pill flex h-[60px] items-center justify-between gap-4 rounded-full py-1.5 pl-5 pr-1.5 md:pl-6">
-      <a href="${base}#top" class="flex items-center" aria-label="Mr. Yoda home">
-        <img src="assets/images/mr-yoda-logo.svg" alt="Mr. Yoda" width="135" height="30" class="logo-dark block h-8 w-auto" />
-        <img src="assets/images/mr-yoda-logo-light.svg" alt="" width="135" height="30" class="logo-light hidden h-8 w-auto" aria-hidden="true" />
+      <a href="${base}#top" class="brand-lockup flex shrink-0 items-center" aria-label="Yodaara by Yoda Diagnostics, home">
+        <img src="assets/img/logo.svg" alt="Yodaara" width="123" height="32" class="logo-dark block h-8 w-auto" />
+        <img src="assets/img/logo-light.svg" alt="" width="123" height="32" class="logo-light hidden h-8 w-auto" aria-hidden="true" />
+        <span class="brand-by">by Yoda Diagnostics</span>
       </a>
       <nav class="nav-pill hidden items-center gap-1 md:flex" aria-label="Main">${links('nav-link')}</nav>
       <a href="${base}#book"
@@ -38,62 +39,127 @@
     </div>
   </header>`;
 
-  // Footer links: the FAQ entry opens the full FAQ page
-  const FOOT = NAV.map((n) => (n.label === 'FAQ' ? { ...n, href: 'faq.html', abs: true } : n));
-  const footLinks = FOOT.map(
-    (n) =>
-      `<li><a class="inline-flex items-center gap-2 text-[15px] text-white/75 transition-colors duration-300 hover:text-white" href="${n.abs ? '' : base}${n.href}">${n.label}</a></li>`
+  // Footer content. A link with no href renders as plain text until the page exists;
+  // add a url to a social entry and it becomes a link.
+  const FT_SOCIAL = [
+    { label: 'Facebook', url: '' },
+    { label: 'Instagram', url: '' },
+    { label: 'LinkedIn', url: '' },
+    { label: 'YouTube', url: '' },
+  ];
+  const FT_TESTS = [
+    { label: 'Autism / Neuropsychiatric Panel - Advanced', href: '#packages' },
+    { label: 'RBC Folate', href: '#packages' },
+    { label: 'Active Vitamin B12 (Holotranscobalamin)', href: '#packages' },
+  ];
+  const FT_COMPANY = [
+    { label: 'About Us' },
+    { label: 'Contact Us' },
+    { label: 'Customer Queries' },
+    { label: 'Blog' },
+    { label: 'FAQs', href: 'faq.html', abs: true },
+  ];
+  const FT_LEGAL = [
+    { label: 'Privacy Policy' },
+    { label: 'Terms and Conditions' },
+    { label: 'Refund Policy' },
+    { label: 'Cancellation Policy' },
+    { label: 'Cookie Policy' },
+  ];
+  const ftList = (items) =>
+    items
+      .map((i) => {
+        const href = i.href ? (i.abs ? '' : base) + i.href : '';
+        return `<li>${href ? `<a class="ft-link" href="${href}">${i.label}</a>` : `<span class="ft-link">${i.label}</span>`}</li>`;
+      })
+      .join('');
+  const ftSocial = FT_SOCIAL.map((i) =>
+    `<li>${i.url ? `<a class="ft-link" href="${i.url}" target="_blank" rel="noopener noreferrer">${i.label}</a>` : `<span class="ft-link">${i.label}</span>`}</li>`
   ).join('');
+  // Footer images: a local copy in assets/images/ is used when present, otherwise the live file on mryoda.com,
+  // otherwise a labelled placeholder.
+  const FT_REMOTE = 'https://www.mryoda.com';
+  const ftImg = (file, remote, alt, label, cls) =>
+    `<img class="${cls}" src="assets/images/${file}" data-remote="${FT_REMOTE}${remote}" alt="${alt}" loading="lazy" decoding="async" onerror="if(!this.dataset.tried){this.dataset.tried=1;this.src=this.dataset.remote}else{this.replaceWith(Object.assign(document.createElement('span'),{className:'ft-ph ${cls}',textContent:'${label}'}))}" />`;
 
+  // Footer: grass photo (assets/images/footer-bg.jpg) with a cream panel on top.
   const footer = `
-  <footer class="relative isolate overflow-hidden bg-brand-900 text-white">
-    <div aria-hidden="true" class="pointer-events-none absolute inset-0 -z-10">
-      <div class="absolute inset-0" style="background:radial-gradient(55% 70% at 8% 0%,rgba(235,112,74,.28),transparent 70%),radial-gradient(50% 60% at 100% 100%,rgba(181,66,19,.35),transparent 70%)"></div>
-      <div class="absolute inset-0 opacity-60" style="background-image:linear-gradient(rgba(255,255,255,.05) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.05) 1px,transparent 1px);background-size:56px 56px;-webkit-mask-image:linear-gradient(180deg,#000,transparent 85%);mask-image:linear-gradient(180deg,#000,transparent 85%)"></div>
-    </div>
+  <footer class="ft">
+    <img class="ft-photo" src="assets/images/footer-bg.jpg" alt="" aria-hidden="true" loading="lazy" decoding="async"  />
+    <div class="ft-fade" aria-hidden="true"></div>
 
-    <div class="wrap">
-      <!-- Call to action -->
-      <div class="flex flex-col items-start justify-between gap-6 border-b border-white/10 py-12 md:flex-row md:items-center md:py-14">
-        <div class="max-w-xl">
-          <p class="text-3xl font-extrabold leading-tight md:text-4xl">Ready to book your home sample collection?</p>
-          <p class="mt-3 text-lg text-white/70">Doorstep pickup, no fasting needed and clear pricing.</p>
-        </div>
-        <a href="${base}#book"
-           class="inline-flex shrink-0 items-center gap-2 rounded-full bg-white px-7 py-3.5 font-semibold text-brand-900 shadow-lg transition-colors duration-300 hover:bg-glow focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/40">
-          Book home collection
-          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true"><path fill-rule="evenodd" d="M10.3 3.3a1 1 0 011.4 0l6 6a1 1 0 010 1.4l-6 6a1 1 0 01-1.4-1.4L14.6 11H3a1 1 0 110-2h11.6l-4.3-4.3a1 1 0 010-1.4z" clip-rule="evenodd"/></svg>
-        </a>
-      </div>
-
-      <!-- Brand, links, notice -->
-      <div class="grid gap-10 py-12 md:grid-cols-[1.2fr_.7fr_1.5fr] md:gap-14">
-        <div>
-          <img src="assets/images/mr-yoda-logo-light.svg" alt="Mr. Yoda" width="180" height="40" class="block h-10 w-auto" loading="lazy" />
-          <p class="mt-4 max-w-xs text-lg leading-snug text-white/75">When your body speaks, Mr. Yoda listens.</p>
+    <div class="wrap ft-wrap">
+      <div class="ft-panel">
+        <!-- Call to action -->
+        <div class="ft-cta">
+          <div>
+            <p class="ft-cta-title">Ready to book your home sample collection?</p>
+            <p class="ft-cta-sub">Doorstep pickup, no fasting needed and clear pricing.</p>
+          </div>
+          <a href="${base}#book" class="ft-btn">
+            Book home collection
+            <svg viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 10h12M11 5l5 5-5 5"/></svg>
+          </a>
         </div>
 
-        <nav aria-label="Footer">
-          <p class="text-sm font-bold uppercase tracking-widest text-glow">Pages</p>
-          <ul class="mt-4 space-y-3">${footLinks}</ul>
-        </nav>
+        <!-- About, link columns -->
+        <div class="ft-main">
+          <div class="ft-brand">
+            <span class="brand-lockup flex items-center"><img src="assets/img/logo.svg" alt="Yodaara" width="123" height="32" class="logo-dark block h-9 w-auto" loading="lazy" /><span class="brand-by">by Yoda Diagnostics</span></span>
+            <h5 class="ft-head ft-head--first">About FRAT India</h5>
+            <p class="ft-tagline">FRAT India helps you understand folate receptor antibodies and access specialized testing through Mr. Yoda.</p>
+            <h5 class="ft-head">Follow Us</h5>
+            <ul class="ft-social" aria-label="Social media">${ftSocial}</ul>
+          </div>
 
-        <div class="rounded-2xl border border-white/15 bg-white/5 p-6 backdrop-blur-sm">
-          <p class="text-sm font-bold uppercase tracking-widest text-glow">Important</p>
-          <p class="mt-3 text-base leading-relaxed text-white/80">
-            This website is for general information and does not replace advice from a doctor.
-            Speak with a physician or autism specialist before making decisions about testing or treatment.
-          </p>
+          <nav class="ft-col" aria-label="Tests and packages">
+            <h5 class="ft-head">Tests &amp; Packages</h5>
+            <ul class="ft-list">${ftList(FT_TESTS)}</ul>
+          </nav>
+
+          <nav class="ft-col" aria-label="Company">
+            <h5 class="ft-head">Company</h5>
+            <ul class="ft-list">${ftList(FT_COMPANY)}</ul>
+          </nav>
+
+          <nav class="ft-col" aria-label="Legal">
+            <h5 class="ft-head">Legal</h5>
+            <ul class="ft-list">${ftList(FT_LEGAL)}</ul>
+          </nav>
         </div>
-      </div>
 
-      <!-- Bottom bar -->
-      <div class="flex flex-col items-center justify-between gap-3 border-t border-white/10 py-6 text-sm text-white/60 sm:flex-row">
-        <p>&copy; ${new Date().getFullYear()} Mr. Yoda. All rights reserved.</p>
-        <button type="button" data-to-top class="inline-flex items-center gap-2 font-semibold text-white/75 transition-colors duration-300 hover:text-white focus-visible:outline-none focus-visible:ring-4 focus-visible:ring-white/30 rounded-full px-2 py-1">
-          Back to top
-          <svg class="h-4 w-4" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M10 16V4M4.5 9.5L10 4l5.5 5.5"/></svg>
-        </button>
+        <!-- App download + accreditations -->
+        <div class="ft-extras">
+          <section class="ft-card ft-app" aria-labelledby="ft-app-title">
+            <div class="ft-app-copy">
+              <h5 id="ft-app-title" class="ft-card-title">Download the Mr. Yoda App</h5>
+              <p class="ft-app-lead">Your Tests. Your Reports. One App.</p>
+              <p class="ft-app-text">Book tests, access your reports, and manage your bookings through Mr. Yoda.</p>
+            </div>
+            <figure class="ft-qr">
+              ${ftImg('mr-yoda-app-qr.svg', '/appstore-qr.svg', 'QR code to download the Mr. Yoda app', 'QR code', 'ft-qr-img')}
+              <figcaption>Scan to Download</figcaption>
+            </figure>
+          </section>
+
+          <section class="ft-card ft-accred" aria-labelledby="ft-accred-title">
+            <h5 id="ft-accred-title" class="ft-card-title">Accreditations &amp; Institutional Information</h5>
+            <div class="ft-logos">
+              ${ftImg('nabl.svg', '/accreditations/nabl.svg', 'NABL accreditation symbol', 'NABL accreditation symbol', 'ft-logo')}
+              ${ftImg('icmr.svg', '/accreditations/icmr.svg', 'ICMR logo', 'ICMR logo', 'ft-logo')}
+            </div>
+          </section>
+        </div>
+
+        <!-- Medical disclaimer -->
+        <div class="ft-notice">
+          <p class="ft-note"><strong>Medical Disclaimer:</strong> FRAT testing identifies folate receptor autoantibodies. It is not a standalone diagnostic test for autism or cerebral folate deficiency. Information on this website is educational and should not replace evaluation or advice from a qualified healthcare professional.</p>
+        </div>
+
+        <!-- Bottom bar -->
+        <div class="ft-bottom">
+          <p>&copy; ${new Date().getFullYear()} FRAT India. All Rights Reserved.</p>
+        </div>
       </div>
     </div>
   </footer>`;

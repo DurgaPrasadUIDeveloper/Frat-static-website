@@ -115,17 +115,37 @@
     const target = Number(countEl.getAttribute('data-count'));
     const from = strike ? Number(strike.textContent.replace(/[^\d]/g, '')) || 25000 : 25000;
     const counter = { v: from };
-    countEl.textContent = from.toLocaleString('en-IN');
+    const fmt = (n) => Math.round(n).toLocaleString('en-IN');
+    countEl.textContent = fmt(from);
+    let finalW = 0;
+    // Lock the width to the widest value it will show so the badge beside the price does not wobble while counting.
+    // Measured just before the count starts, once the webfont has had time to load.
+    const lockWidth = () => {
+      const shown = countEl.textContent;
+      const widthOf = (n) => { countEl.textContent = fmt(n); return countEl.getBoundingClientRect().width; };
+      countEl.style.display = 'inline-block';
+      countEl.style.minWidth = '0px';
+      finalW = widthOf(target);
+      let widest = Math.max(finalW, widthOf(from));
+      for (let v = target; v < from; v += 500) widest = Math.max(widest, widthOf(v));
+      countEl.style.minWidth = Math.ceil(widest) + 'px';
+      countEl.textContent = shown;
+    };
+    const prep = () => { if (document.fonts && document.fonts.ready) document.fonts.ready.then(lockWidth); else lockWidth(); };
+    tl.call(prep, null, 1.1);
     tl.to(counter, {
       v: target,
-      duration: 1.8,
+      duration: 2.2,
       ease: 'power2.inOut',
-      onUpdate: () => { countEl.textContent = Math.round(counter.v).toLocaleString('en-IN'); },
-      onComplete: () => { countEl.textContent = target.toLocaleString('en-IN'); },
-    }, 1.1);
+      onUpdate: () => { countEl.textContent = fmt(counter.v); },
+      onComplete: () => {
+        countEl.textContent = fmt(target);
+        gsap.to(countEl, { minWidth: Math.ceil(finalW), duration: 0.4, ease: 'power2.out', onComplete: () => { countEl.style.minWidth = ''; } });
+      },
+    }, 1.2);
   }
   const badge = hero.querySelector('[data-badge]');
-  if (badge) tl.fromTo(badge, { scale: 0, rotate: -12 }, { scale: 1, rotate: 0, duration: 0.7, ease: 'back.out(2.2)' }, 2.6);
+  if (badge) tl.fromTo(badge, { scale: 0, rotate: -12 }, { scale: 1, rotate: 0, duration: 0.7, ease: 'back.out(2.2)' }, countEl ? 3.2 : 2.6);
 
   // Scroll cue bobbing
   const cue = hero.querySelector('[data-cue]');
