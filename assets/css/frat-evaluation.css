@@ -10,14 +10,8 @@
   padding-block: clamp(48px, 6vw, 96px);
   color: var(--fe-text);
   font-family: "Poppins", "Poppins Fallback", sans-serif;
-  background:
-    radial-gradient(55% 60% at 100% 0%, #fbeadf 0%, transparent 65%),
-    radial-gradient(45% 55% at 0% 100%, #fbebe0 0%, transparent 65%),
-    linear-gradient(180deg, #fef8f3, #fcf1e9);
+  background: linear-gradient(180deg, #fef8f3, #fcf1e9);
 }
-.fe-leaf { position: absolute; z-index: -1; pointer-events: none; user-select: none; }
-.fe-leaf--top { top: -3%; right: -1%; width: clamp(150px, 18vw, 300px); opacity: .5; }
-.fe-leaf--bottom { bottom: -4%; left: -2%; width: clamp(120px, 13vw, 220px); opacity: .45; transform: scaleX(-1) rotate(8deg); }
 
 /* ---- Eyebrow + headings ---- */
 .frat-evaluation-eyebrow {
